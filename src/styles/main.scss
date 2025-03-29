@@ -1,0 +1,29 @@
+@use "../styles/variables.scss" as *;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	list-style: none;
+	text-decoration: none;
+}
+
+:root {
+	--text-black: $secdary-color;
+	--background: $primary-color;
+	--border: $secdary-color;
+}
+
+body.light-mode {
+	--text-black: $primary-color;
+	--background: $secondary-color;
+}
+
+body {
+	background: $primary-color;
+}
+
+body.light-mode {
+	background-color: var(--background);
+}
