@@ -138,28 +138,31 @@ const { isDarkMode } = useTheme();
 
 const projects = ref([
 	{
-		title: "Project 1",
-		description: "Description for project 1",
-		technologies: "Vue JavaScript CSS",
+		title: " Ai-summarizer",
+		description:
+			"AI tool that summarizes text from documents using VertexAI and/or Langchain's Open AI implementation. ",
+		technologies: "JavaScript CSS",
 		imageUrl: "../assets/images/project1.jpg",
 		projectUrl: "#",
-		githubUrl: "#",
+		githubUrl: "https://github.com/DesmondSanctity/ai-summarizer",
 	},
 	{
-		title: "Project 2",
-		description: "Description for project 2",
-		technologies: "React TypeScript SCSS",
+		title: "Tyche-nomisma",
+		description:
+			"An AI tool that you can use to get currency pair update via Whatsapp. Built with Twilio and Cloudflare Workers AI. ",
+		technologies: "JavaScript",
 		imageUrl: "../assets/images/project2.jpg",
 		projectUrl: "#",
-		githubUrl: "#",
+		githubUrl: "https://github.com/DesmondSanctity/tyche-nomisma",
 	},
 	{
-		title: "Project 3",
-		description: "Description for project 3",
-		technologies: "Node.js Express, MongoDB",
+		title: " Ip_sniffer",
+		description:
+			"A CLI tool to check open ports in a given IP address built with Rust. ",
+		technologies: "Rust",
 		imageUrl: "../assets/images/project3.jpg",
 		projectUrl: "#",
-		githubUrl: "#",
+		githubUrl: "https://github.com/DesmondSanctity/ip_sniffer",
 	},
 ]);
 
@@ -227,8 +230,11 @@ const blogs = ref([
 @use "../styles/variables.scss" as *;
 @use "../styles/mixin" as *;
 
+@include fadeIn;
+
 .home {
 	margin: 160px $body-margin 0;
+	animation: fadeIn 1s ease-out forwards;
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
@@ -244,6 +250,7 @@ const blogs = ref([
 
 	.banner-sec {
 		margin: $body-margin-up 0;
+		animation: fadeIn 1s ease-out forwards;
 
 		@include mobile {
 			margin: $body-margin-mobile 0;
@@ -320,6 +327,11 @@ const blogs = ref([
 							text-transform: capitalize;
 							font-family: Font2;
 							font-size: $bodytxt-2;
+							transition: 0.5s ease-in-out;
+
+							&:hover {
+								scale: 1.2;
+							}
 
 							@include mobile {
 								font-size: $bodytxt-3;
@@ -347,6 +359,12 @@ const blogs = ref([
 					display: flex;
 					gap: 10px;
 					align-items: center;
+					transition: 0.5s ease-in-out;
+
+					&:hover {
+						scale: 0.9;
+						background: $secondary-color-1;
+					}
 				}
 			}
 		}

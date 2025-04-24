@@ -52,6 +52,12 @@ const { isDarkMode } = useTheme();
 			font-size: $subheading-1;
 			color: $secondary-color;
 			text-decoration: underline;
+			text-underline-offset: 4px;
+			transition: 0.5s ease-in-out;
+			
+			&:hover{
+				scale: 1.02;
+			}
 
 			@include mobile {
 				font-size: $bodytxt;
@@ -78,12 +84,12 @@ const { isDarkMode } = useTheme();
 		}
 	}
 
-	&.light-mode{
-    .title{
+	&.light-mode {
+		.title {
 			color: var(--text-black);
 		}
 
-		.description{
+		.description {
 			color: var(--text-black);
 		}
 	}
