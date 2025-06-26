@@ -92,8 +92,11 @@ const { isDarkMode } = useTheme();
 @use "../styles/variables.scss" as *;
 @use "../styles/mixin" as *;
 
+@include fadeIn;
+
 .about {
 	margin: 160px $body-margin 0;
+	animation: fadeIn 1s ease-out forwards;
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
@@ -269,7 +272,7 @@ const { isDarkMode } = useTheme();
 					}
 				}
 
-				.techs{
+				.techs {
 					p {
 						color: var(--text-black);
 					}

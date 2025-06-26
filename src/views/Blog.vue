@@ -14,29 +14,25 @@
 						'active-tab': activeTab === 'mine',
 						'tabs-mod': activeTab === 'mine',
 					}"
-					@click="setActiveTab('mine')"
-				>
+					@click="setActiveTab('mine')">
 					<h2><span>#</span>Mine</h2>
 				</div>
 				<div
 					class="tabs"
 					:class="{ 'active-tab': activeTab === 'twilio' }"
-					@click="setActiveTab('twilio')"
-				>
+					@click="setActiveTab('twilio')">
 					<h2><span>#</span>Twilio</h2>
 				</div>
 				<div
 					class="tabs"
 					:class="{ 'active-tab': activeTab === 'resilis' }"
-					@click="setActiveTab('resilis')"
-				>
+					@click="setActiveTab('resilis')">
 					<h2><span>#</span>Resilis</h2>
 				</div>
 				<div
 					class="tabs"
 					:class="{ 'active-tab': activeTab === 'other' }"
-					@click="setActiveTab('other')"
-				>
+					@click="setActiveTab('other')">
 					<h2><span>#</span>Others</h2>
 				</div>
 			</div>
@@ -44,8 +40,7 @@
 				<Blogcard
 					v-for="(blog, index) in displayedBlogs"
 					:key="index"
-					:blog="blog"
-				/>
+					:blog="blog" />
 			</div>
 		</section>
 
@@ -54,46 +49,48 @@
 </template>
 
 <script setup>
-import Navbar from "../components/navbar.vue";
-import Footer from "../components/footer.vue";
-import Blogcard from "../components/blogscard.vue";
+import Navbar from '../components/navbar.vue';
+import Footer from '../components/footer.vue';
+import Blogcard from '../components/blogscard.vue';
 
-import { ref, computed } from "vue";
-import { useTheme } from "../composables/useTheme";
-import { blogData } from "../composables/blogData.js";
+import { ref, computed } from 'vue';
+import { useTheme } from '../composables/useTheme';
+import { blogData } from '../composables/blogData.js';
 
 const { isDarkMode } = useTheme();
 
-const activeTab = ref("mine");
+const activeTab = ref('mine');
 const setActiveTab = (tab) => {
-  activeTab.value = tab;
+	activeTab.value = tab;
 };
 
 const { selfBlog, twilio, resilis, others } = blogData;
 
 const displayedBlogs = computed(() => {
-  switch (activeTab.value) {
-    case "mine":
-      return selfBlog;
-    case "twilio":
-      return twilio;
-    case "resilis":
-      return resilis;
-    case "other":
-      return others;
-    default:
-      return selfBlog;
-  }
+	switch (activeTab.value) {
+		case 'mine':
+			return selfBlog;
+		case 'twilio':
+			return twilio;
+		case 'resilis':
+			return resilis;
+		case 'other':
+			return others;
+		default:
+			return selfBlog;
+	}
 });
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin' as *;
 
+@include fadeIn;
 
 .blog-con {
 	margin: 160px $body-margin 0;
+	animation: fadeIn 1s ease-out forwards;
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
@@ -120,6 +117,7 @@ const displayedBlogs = computed(() => {
 
 		@include mobile {
 			margin-bottom: 34px;
+			flex-wrap: wrap;
 		}
 
 		.tabs {
@@ -127,6 +125,10 @@ const displayedBlogs = computed(() => {
 			cursor: pointer;
 			color: $secondary-color-2;
 			border-right: 1px dashed $secondary-color-3;
+
+			@include mobile{
+				padding: 0 8px;
+			}
 
 			h2 {
 				font-family: Font2;
@@ -149,6 +151,10 @@ const displayedBlogs = computed(() => {
 
 		.tabs-mod {
 			padding: 0 16px 0 0;
+
+			@include mobile {
+				padding: 0 8px 0 0;
+			}
 		}
 	}
 

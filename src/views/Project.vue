@@ -133,8 +133,11 @@ const projects = ref([
 @use "../styles/variables" as *;
 @use "../styles/mixin" as *;
 
+@include fadeIn;
+
 .project {
 	margin: 160px $body-margin 0;
+	animation: fadeIn 1s ease-out forwards;
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;

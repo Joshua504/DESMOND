@@ -188,16 +188,18 @@ nav {
 				top: 65px;
 				height: 0;
 				left: 0;
-				flex-direction: column;
+				// flex-direction: column;
+				flex-wrap: wrap;
 				overflow: hidden;
 				visibility: collapse;
 				transition: all 0.5s ease-in-out;
 				border-bottom: 1px solid $secondary-color-2;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
+				background: $primary-color;
 
 				&.active {
-					height: 350px;
+					height: fit-content;
 					visibility: visible;
 				}
 			}
@@ -211,7 +213,8 @@ nav {
 
 				@include mobile {
 					padding: 16px;
-					border: none;
+					// border: none;
+					height: fit-content;
 				}
 
 				.hashtag {

@@ -52,12 +52,16 @@ const { isDarkMode } = useTheme();
 	width: 345px;
 
 	@include tablet {
-		width: 340px;
+		width: 300px;
 	}
 
 	.img-con {
 		height: 292px;
 		background: red;
+
+		@include mobile{
+			height: 200px;
+		}
 	}
 	.stacks {
 		padding: 8px;

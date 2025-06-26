@@ -1,5 +1,10 @@
 <template>
 	<Navbar />
+	<div class="cover">
+		<section>
+			<img src="/src/assets/images/coming-soon.gif" alt="" />
+		</section>
+	</div>
 	<section class="youtube" :class="{ 'light-mode': !isDarkMode }">
 		<div class="title-con title-mod">
 			<h2><span>/</span>Youtube</h2>
@@ -15,12 +20,16 @@
 					<p class="description">"{{ blog.description }}"</p>
 					<div class="reactions">
 						<div class="icons">
-							<img v-if="isDarkMode" src="../assets/icons/uil-eye.png" alt="" /> 
-							<img v-else src="../assets/icons/uil-eye-1.png" alt="" /> 
+							<img v-if="isDarkMode" src="../assets/icons/uil-eye.png" alt="" />
+							<img v-else src="../assets/icons/uil-eye-1.png" alt="" />
 							<p class="technology">{{ blog.views }}k</p>
 						</div>
 						<div class="icons">
-							<img v-if="isDarkMode" src="../assets/icons/uil-thumbs-up.png" alt="" />
+							<img
+								v-if="isDarkMode"
+								src="../assets/icons/uil-thumbs-up.png"
+								alt=""
+							/>
 							<img v-else src="../assets/icons/uil-thumbs-up-1.png" alt="" />
 							<p class="technology">{{ blog.likes }}</p>
 						</div>
@@ -81,8 +90,37 @@ const blogs = ref([
 @use "../styles/variables.scss" as *;
 @use "../styles/mixin" as *;
 
+@include fadeIn;
+
+.cover {
+	background: $primary-color;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	// // filter: blur(10px);
+	// backdrop-filter: blur(10px);
+	// -webkit-backdrop-filter: blur(10px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	section {
+		img {
+			z-index: 2;
+
+			@include mobile{
+				width: 100%;
+			}
+		}
+	}
+}
+
 .youtube {
 	margin: 160px $body-margin 0;
+	animation: fadeIn 1s ease-out forwards;
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
@@ -194,6 +232,11 @@ const blogs = ref([
 				}
 			}
 		}
+	}
+}
+.light-mode {
+	.cover {
+		background: $secondary-color;
 	}
 }
 </style>
