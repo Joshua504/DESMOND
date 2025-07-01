@@ -111,7 +111,6 @@ const { isDarkMode } = useTheme();
 		margin: 100px $body-margin-mobile 0;
 	}
 
-
 	.title-con {
 		@include heading;
 
@@ -201,6 +200,9 @@ const { isDarkMode } = useTheme();
 
 				@include macbook {
 					width: 300px;
+				}
+				@include mobile {
+					width: 100%;
 				}
 
 				.stacks {

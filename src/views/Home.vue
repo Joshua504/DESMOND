@@ -153,7 +153,7 @@ const projects = ref([
 		description:
 			'A CLI tool to check open ports in a given IP address built with Rust. ',
 		technologies: 'Rust',
-		imageUrl: '/src/assets/images/AI.png',
+		imageUrl: '/src/assets/images/Ip.png',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/ip_sniffer',
 	},
