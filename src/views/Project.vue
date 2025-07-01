@@ -109,7 +109,7 @@ const projects = ref([
 		description:
 			"AI tool that summarizes text from documents using VertexAI and/or Langchain's Open AI implementation ",
 		technologies: ' JavaScript css',
-		imageUrl: '/src/assets/images/Cover(1).jpg',
+		imageUrl: '../src/assets/images/Cover(1).jpg',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/ai-summarizer',
 	},
@@ -118,7 +118,7 @@ const projects = ref([
 		description:
 			'An AI tool that you can use to get currency pair update via Whatsapp. Built with Twilio and Cloudflare Workers AI. ',
 		technologies: 'JavaScript',
-		imageUrl: '/src/assets/images/currency.png',
+		imageUrl: '../src/assets/images/currency.png',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/tyche-nomisma',
 	},
@@ -127,7 +127,7 @@ const projects = ref([
 		description:
 			'Learn how to build and integrate AI agents into your application using the function calling feature. ',
 		technologies: 'JavaScript',
-		imageUrl: '/src/assets/images/AI.png',
+		imageUrl: '../src/assets/images/AI.png',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/claude-functions',
 	},

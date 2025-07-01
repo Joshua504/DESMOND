@@ -123,6 +123,7 @@ const blogs = ref([
 
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
+		display: none;
 	}
 
 	@include tablet {
