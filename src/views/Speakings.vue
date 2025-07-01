@@ -16,15 +16,13 @@
 				<div
 					class="tabs tabs-mod"
 					:class="{ 'active-tab': activeYear === 2023 }"
-					@click="activeYear = 2023"
-				>
+					@click="activeYear = 2023">
 					<h2><span>#</span>2023</h2>
 				</div>
 				<div
 					class="tabs"
 					:class="{ 'active-tab': activeYear === 2024 }"
-					@click="activeYear = 2024"
-				>
+					@click="activeYear = 2024">
 					<h2><span>#</span>2024</h2>
 				</div>
 			</div>
@@ -32,22 +30,25 @@
 				<div
 					class="speaks-card"
 					v-for="(speaking, index) in filteredSpeakings"
-					:key="index"
-				>
-					<div class="logo-con">
-						<img :src="speaking.logoSrc" alt="" />
-					</div>
-					<div class="stacks">
-						<p>{{ speaking.organization }}</p>
-					</div>
-					<div class="txt-area">
-						<h2>{{ speaking.title }}</h2>
-						<p>{{ speaking.description }}</p>
-						<a :href="speaking.link" target="_blank">
-							<div>view</div>
-							<img src="../assets/icons/uil-link-h.png" alt="" />
-						</a>
-					</div>
+					:key="index">
+					<iframe
+						class="speakerdeck-iframe"
+						style="
+							border: 0px;
+							background: rgba(0, 0, 0, 0.1) padding-box;
+							margin: 0px;
+							padding: 0px;
+							border-radius: 6px;
+							box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px;
+							/* width: 100%; */
+							height: auto;
+							aspect-ratio: 560 / 315;
+						"
+						frameborder="0"
+						:src="speaking.link"
+						:title="speaking.title"
+						allowfullscreen="true"
+						data-ratio="1.7777777777777777"></iframe>
 				</div>
 			</section>
 		</section>
@@ -56,13 +57,12 @@
 </template>
 
 <script setup>
-import Navbar from "../components/navbar.vue";
-import Footer from "../components/footer.vue";
-import chaos from "../assets/images/chaos afr.png";
+import Navbar from '../components/navbar.vue';
+import Footer from '../components/footer.vue';
 
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted } from 'vue';
 
-import { useTheme } from "../composables/useTheme";
+import { useTheme } from '../composables/useTheme';
 
 const props = defineProps({
 	project: Object,
@@ -74,63 +74,50 @@ const activeYear = ref(2023);
 
 const speakings2023 = [
 	{
-		logoSrc: chaos,
-		organization: "chaos africa",
-		title: "Scalable, Performant Decentralized APIs.",
-		description:
-			"As APIs fuel the digital economy, apidays Helsinki & North explores how organizations can leverage APIs for scalable innovation, automation, and sustainability.",
-		link: "https://example.com/2023-talk1",
+		title:
+			'Exploring the Future of Web Development with WebAssembly and Javascript - CityJS Conf 2023',
+		link: 'https://speakerdeck.com/player/d86bd6f7b4d244e2b516fe0ec26de3fa',
 	},
 	{
-		logoSrc: chaos,
-		organization: "devfest lagos",
-		title: "Building Resilient Web Applications",
-		description:
-			"A deep dive into strategies for creating web applications that can handle failures gracefully and maintain performance under stress.",
-		link: "https://example.com/2023-talk2",
+		title:
+			'The Future of WebAssembly: Revolutionizing Computing Across Platforms and Industries',
+		link: 'https://speakerdeck.com/player/b6afe575a64f4a2a8f0d36cfefea625b',
 	},
 	{
-		logoSrc: chaos,
-		organization: "jsconf africa",
-		title: "The Future of JavaScript Frameworks",
-		description:
-			"Exploring emerging patterns and technologies in the JavaScript ecosystem and how they will shape the future of web development.",
-		link: "https://example.com/2023-talk3",
+		title: 'Streamlining DevOps Workflows with Ansible AWX',
+		link: 'https://speakerdeck.com/player/97bdf5df811346b0aad2f164fa6db239',
 	},
 	{
-		logoSrc: chaos,
-		organization: "jsconf africa",
-		title: "The Future of JavaScript Frameworks",
-		description:
-			"Exploring emerging patterns and technologies in the JavaScript ecosystem and how they will shape the future of web development.",
-		link: "https://example.com/2023-talk3",
+		title:
+			'AWX Operator Documentation, What’s New? - Ansible Contributor Summit 2023',
+		link: 'https://speakerdeck.com/player/a103967a0717473c931a6b99370f087c',
 	},
 	{
-		logoSrc: chaos,
-		organization: "jsconf africa",
-		title: "The Future of JavaScript Frameworks",
-		description:
-			"Exploring emerging patterns and technologies in the JavaScript ecosystem and how they will shape the future of web development.",
-		link: "https://example.com/2023-talk3",
+		title: 'Optimize, Learn Fast, Learn Smart : Focus and Discipline',
+		link: 'https://speakerdeck.com/player/df53b073f85b45649cc3d52bd833b3a5',
+	},
+	{
+		title:
+			'From Data to Destinations:  A Hands-on Workshop with Google Places API and Twilio',
+		link: 'https://speakerdeck.com/player/afd69789ef28468fb8334cc3b61c0374',
+	},
+	{
+		title:
+			'Accelerating your personal and professional growth through open source contributions: Standing out in a world full of talents.',
+		link: 'https://speakerdeck.com/player/54bfab12b93c4e898aa121a695062d36',
 	},
 ];
 
 const speakings2024 = [
 	{
-		logoSrc: chaos,
-		organization: "react summit",
-		title: "State Management Patterns in React Applications",
-		description:
-			"An exploration of different state management approaches in modern React applications, from Context API to Redux and beyond.",
-		link: "https://example.com/2024-talk1",
+		title:
+			'Exploring the Future of Web Development with WebAssembly and Javascript - CityJS Conf 2023',
+		link: 'https://speakerdeck.com/player/d86bd6f7b4d244e2b516fe0ec26de3fa',
 	},
 	{
-		logoSrc: chaos,
-		organization: "vue conf",
-		title: "Building Performant Vue 3 Applications",
-		description:
-			"Practical strategies for optimizing Vue 3 applications, leveraging the Composition API and other new features to create lightning-fast user experiences.",
-		link: "https://example.com/2024-talk2",
+		title:
+			'Exploring the Future of Web Development with WebAssembly and Javascript - CityJS Conf 2023',
+		link: 'https://speakerdeck.com/player/d86bd6f7b4d244e2b516fe0ec26de3fa',
 	},
 ];
 
@@ -140,8 +127,8 @@ const filteredSpeakings = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables' as *;
+@use '../styles/mixin' as *;
 
 @include fadeIn;
 
@@ -149,16 +136,17 @@ const filteredSpeakings = computed(() => {
 	margin: 160px $body-margin 0;
 	animation: fadeIn 1s ease-out forwards;
 
-	@include mobile {
-		margin: 100px $body-margin-mobile 0;
+	@include macbookpro {
+		margin: 160px $body-margin-macpro 0;
 	}
-
+	@include macbook {
+		margin: 160px $body-margin-mac 0;
+	}
 	@include tablet {
 		margin: 150px $body-margin-tab 0;
 	}
-
-	@include macbook {
-		margin: 160px $body-margin-mac 0;
+	@include mobile {
+		margin: 100px $body-margin-mobile 0;
 	}
 
 	.banner-sec {
@@ -181,6 +169,10 @@ const filteredSpeakings = computed(() => {
 		@include mobile {
 			margin-top: 24px;
 			height: 230px;
+		}
+		@include tablet {
+			margin-top: 24px;
+			height: fit-content;
 		}
 
 		img {
@@ -235,90 +227,35 @@ const filteredSpeakings = computed(() => {
 		display: flex;
 		gap: 35px;
 		flex-wrap: wrap;
+
+		@include mobile {
+			justify-content: center;
+		}
 	}
 
 	.speaks-card {
-		border: 1px solid $secondary-color;
-		width: 345px;
+		.speakerdeck-iframe {
+			width: 540px;
 
-		.logo-con {
-			height: 100px;
-			display: grid;
-			place-content: center;
-		}
-
-		.stacks {
-			padding: 8px;
-			border-top: 1px solid $secondary-color;
-			border-bottom: 1px solid $secondary-color;
-
-			p {
-				font-family: Font2;
-				font-size: $bodytxt;
-				color: $secondary-color-2;
-			}
-		}
-
-		.txt-area {
-			padding: 16px 14px;
-
-			h2 {
-				font-family: Font4;
-				font-size: $subheading-1;
-				color: $secondary-color-1;
-				margin-bottom: 16px;
+			@include macbook {
+				width: 468px;
 			}
 
-			p {
-				font-family: Font2;
-				font-size: $bodytxt-2;
-				color: $secondary-color;
-				margin-bottom: 16px;
+			@include tablet {
+				width: 350px;
 			}
 
-			a {
-				width: 111px;
-				padding: 8px 16px;
-				font-family: Font2;
-				font-size: $bodytxt;
-				color: $secondary-color;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 10px;
-				border: 1px solid $secondary-color-1;
+			@include mobile {
+				width: 300px;
 			}
 		}
 	}
 
 	&.light-mode {
-		.title-con {
-			h2 {
-				color: var(--text-black);
-			}
-		}
-
-		.tab-con {
+		.tab-sec {
 			.active-tab {
-				color: var(--text-black);
-			}
-		}
-
-		.speaks-card {
-			border-color: var(--text-black);
-
-			.stacks {
-				border-color: var(--text-black);
-			}
-
-			.txt-area {
-				p {
-					color: var(--text-black);
-				}
-				a {
-					color: var(--text-black);
-					border-color: var(--text-black);
-				}
+				text-decoration: underline;
+				color: $primary-color;
 			}
 		}
 	}

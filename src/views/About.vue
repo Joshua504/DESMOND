@@ -77,9 +77,9 @@
 </template>
 
 <script setup>
-import Navbar from "../components/navbar.vue";
-import Footer from "../components/footer.vue";
-import { useTheme } from "../composables/useTheme";
+import Navbar from '../components/navbar.vue';
+import Footer from '../components/footer.vue';
+import { useTheme } from '../composables/useTheme';
 
 const props = defineProps({
 	project: Object,
@@ -89,8 +89,8 @@ const { isDarkMode } = useTheme();
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin' as *;
 
 @include fadeIn;
 
@@ -98,17 +98,19 @@ const { isDarkMode } = useTheme();
 	margin: 160px $body-margin 0;
 	animation: fadeIn 1s ease-out forwards;
 
+	@include macbookpro {
+		margin: 160px $body-margin-macpro 0;
+	}
+	@include macbook {
+		margin: 160px $body-margin-mac 0;
+	}
+	@include tablet {
+		margin: 150px $body-margin-tab 0;
+	}
 	@include mobile {
 		margin: 100px $body-margin-mobile 0;
 	}
 
-	@include tablet {
-		margin: 150px $body-margin-tab 0;
-	}
-
-	@include macbook {
-		margin: 160px $body-margin-mac 0;
-	}
 
 	.title-con {
 		@include heading;
@@ -196,6 +198,10 @@ const { isDarkMode } = useTheme();
 				width: 355px;
 				height: 188px;
 				border: 1px solid $secondary-color;
+
+				@include macbook {
+					width: 300px;
+				}
 
 				.stacks {
 					padding: 15px 10px;

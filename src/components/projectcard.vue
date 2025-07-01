@@ -23,44 +23,62 @@
 </template>
 
 <script setup>
-import { useTheme } from "../composables/useTheme";
+import { useTheme } from '../composables/useTheme';
 
 const props = defineProps({
 	project: {
 		type: Object,
 		required: true,
 		default: () => ({
-			title: "",
-			description: "",
-			imageUrl: "",
-			projectUrl: "#",
+			title: '',
+			description: '',
+			imageUrl: '',
+			projectUrl: '#',
 			technologies: [],
 		}),
 	},
 });
 
+console.log(props.project.imageUrl)
+
 const { isDarkMode } = useTheme();
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin.scss" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin.scss' as *;
 
 .card {
-	// position: relative;
 	border: 1px solid $secondary-color;
 	width: 345px;
+
+	@include macbook {
+		width: 300px;
+	}
 
 	@include tablet {
 		width: 300px;
 	}
 
+	@include mobile {
+		width: 100%;
+		height: fit-content;
+	}
+
+
+
+
 	.img-con {
 		height: 292px;
-		background: red;
 
-		@include mobile{
+		@include mobile {
 			height: 200px;
+		}
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 	.stacks {
@@ -78,6 +96,10 @@ const { isDarkMode } = useTheme();
 	.txt-area {
 		padding: 16px 14px;
 		height: 240px;
+
+		@include mobile {
+			height: fit-content;
+		}
 
 		h2 {
 			font-family: Font4;
@@ -98,6 +120,9 @@ const { isDarkMode } = useTheme();
 
 			@include tablet {
 				margin-bottom: 12px;
+			}
+			@include macbook {
+				font-size: $bodytxt-3;
 			}
 		}
 

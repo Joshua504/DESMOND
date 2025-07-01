@@ -1,4 +1,4 @@
-@use "../styles/variables" as *;
+@use '../styles/variables' as *;
 
 @mixin mobile {
 	@media (width <= 767px) {
@@ -12,9 +12,14 @@
 	}
 }
 @mixin macbook {
-	@media (1025px < width <= 1728px) {
+	@media (1025px < width <= 1727px) {
 		@content;
 	}
+}
+@mixin macbookpro {
+	@media screen and (max-width: 1728px) {
+    @content;
+  }
 }
 
 @mixin heading {

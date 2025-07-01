@@ -17,13 +17,11 @@
 					<img
 						v-if="isDarkMode"
 						src="../assets/icons/uil-sun.png"
-						alt="Switch to light mode"
-					/>
+						alt="Switch to light mode" />
 					<img
 						v-else
 						src="../assets/icons/uil-moon-1.png"
-						alt="Switch to dark mode"
-					/>
+						alt="Switch to dark mode" />
 				</div>
 			</div>
 		</section>
@@ -71,9 +69,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useTheme } from "../composables/useTheme";
-
+import { ref } from 'vue';
+import { useTheme } from '../composables/useTheme';
 
 const isMenuOpen = ref(false);
 const { isDarkMode, toggleTheme } = useTheme();
@@ -84,8 +81,8 @@ const toggleMenu = () => {
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin' as *;
 nav {
 	background: $primary-color;
 	padding: 24px $body-margin;
@@ -98,6 +95,12 @@ nav {
 	display: grid;
 	align-items: center;
 
+	@include macbookpro {
+		padding: 24px $body-margin-macpro;
+	}
+	@include macbook {
+		padding: 24px $body-margin-mac;
+	}
 	@include mobile {
 		border-bottom: 1px solid $secondary-color-2;
 		padding: 15px $body-margin-mobile;
@@ -107,10 +110,6 @@ nav {
 
 	@include tablet {
 		padding: 24px $body-margin-tab;
-	}
-
-	@include macbook {
-		padding: 24px $body-margin-mac;
 	}
 
 	.logo-con {
@@ -260,7 +259,6 @@ nav {
 		}
 
 		.nav-links ul li {
-
 			.active-link .nav-txt {
 				color: $primary-color;
 			}

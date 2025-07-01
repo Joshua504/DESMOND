@@ -40,20 +40,17 @@
 				<div class="resume">
 					<a
 						href="../assets/images/avatar-CoGdC8ty.jpg"
-						download="Desmond_Obisi_Resume.pdf"
-					>
+						download="Desmond_Obisi_Resume.pdf">
 						Resume
 						<div>
 							<img
 								v-if="isDarkMode"
 								src="../assets/icons/uil-arrow-to-bottom.png"
-								alt=""
-							/>
+								alt="" />
 							<img
 								v-else
 								src="../assets/icons/uil-arrow-to-bottom-1.png"
-								alt=""
-							/>
+								alt="" />
 						</div>
 					</a>
 				</div>
@@ -62,8 +59,7 @@
 				<img v-if="isDarkMode" src="../assets/icons/quote.png" alt="" /><img
 					v-else
 					src="../assets/icons/quote-1.png"
-					alt=""
-				/>
+					alt="" />
 			</div>
 		</section>
 
@@ -85,8 +81,7 @@
 				<Projectcard
 					v-for="(project, index) in projects"
 					:key="index"
-					:project="project"
-				/>
+					:project="project" />
 			</div>
 		</section>
 
@@ -100,7 +95,7 @@
 					<div class="line"></div>
 				</div>
 				<div class="view-con">
-					<router-link to="/project">view all</router-link>
+					<router-link to="/blog">view all</router-link>
 					<img src="../assets/icons/right-arrow.png" alt="" />
 				</div>
 			</section>
@@ -108,16 +103,14 @@
 				<Blogcard
 					v-for="(blog, index) in blogs.slice(0, 3)"
 					:key="index"
-					:blog="blog"
-				/>
+					:blog="blog" />
 			</div>
 
 			<div class="quote">
 				<img v-if="isDarkMode" src="../assets/icons/quote(1).png" alt="" /><img
 					v-else
 					src="../assets/icons/quote-2.png"
-					alt=""
-				/>
+					alt="" />
 			</div>
 		</section>
 
@@ -126,109 +119,109 @@
 </template>
 
 <script setup>
-import Navbar from "../components/navbar.vue";
-import Projectcard from "../components/projectcard.vue";
-import Blogcard from "../components/blogscard.vue";
-import Footer from "../components/footer.vue";
-import { useTheme } from "../composables/useTheme";
+import Navbar from '../components/navbar.vue';
+import Projectcard from '../components/projectcard.vue';
+import Blogcard from '../components/blogscard.vue';
+import Footer from '../components/footer.vue';
+import { useTheme } from '../composables/useTheme';
 
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const { isDarkMode } = useTheme();
 
 const projects = ref([
 	{
-		title: " Ai-summarizer",
+		title: ' Ai-summarizer',
 		description:
 			"AI tool that summarizes text from documents using VertexAI and/or Langchain's Open AI implementation. ",
-		technologies: "JavaScript CSS",
-		imageUrl: "../assets/images/project1.jpg",
-		projectUrl: "#",
-		githubUrl: "https://github.com/DesmondSanctity/ai-summarizer",
+		technologies: 'JavaScript CSS',
+		imageUrl: '/src/assets/images/Cover(1).jpg',
+		projectUrl: '#',
+		githubUrl: 'https://github.com/DesmondSanctity/ai-summarizer',
 	},
 	{
-		title: "Tyche-nomisma",
+		title: 'Tyche-nomisma',
 		description:
-			"An AI tool that you can use to get currency pair update via Whatsapp. Built with Twilio and Cloudflare Workers AI. ",
-		technologies: "JavaScript",
-		imageUrl: "../assets/images/project2.jpg",
-		projectUrl: "#",
-		githubUrl: "https://github.com/DesmondSanctity/tyche-nomisma",
+			'An AI tool that you can use to get currency pair update via Whatsapp. Built with Twilio and Cloudflare Workers AI. ',
+		technologies: 'JavaScript',
+		imageUrl: '/src/assets/images/currency.png',
+		projectUrl: '#',
+		githubUrl: 'https://github.com/DesmondSanctity/tyche-nomisma',
 	},
 	{
-		title: " Ip_sniffer",
+		title: ' Ip_sniffer',
 		description:
-			"A CLI tool to check open ports in a given IP address built with Rust. ",
-		technologies: "Rust",
-		imageUrl: "../assets/images/project3.jpg",
-		projectUrl: "#",
-		githubUrl: "https://github.com/DesmondSanctity/ip_sniffer",
+			'A CLI tool to check open ports in a given IP address built with Rust. ',
+		technologies: 'Rust',
+		imageUrl: '/src/assets/images/AI.png',
+		projectUrl: '#',
+		githubUrl: 'https://github.com/DesmondSanctity/ip_sniffer',
 	},
 ]);
 
 const blogs = ref([
 	{
-		title: "Multi-factor authentication in Go using Twilio Verify API",
-		date: "Nov 26, 2024",
+		title: 'Multi-factor authentication in Go using Twilio Verify API',
+		date: 'Nov 26, 2024',
 		description:
 			"In this article, we'll explore how to implement MFA in a Go fullstack application using the Twilio Verify API and integrate it with a Vue.js frontend.",
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/multi-factor-authentication-go-twilio-verify",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/multi-factor-authentication-go-twilio-verify',
+		technologies: 'Twilio',
 	},
 	{
-		title: "Understanding Database Transactions with Postgres and Twilio",
-		date: "Aug 22, 2024",
+		title: 'Understanding Database Transactions with Postgres and Twilio',
+		date: 'Aug 22, 2024',
 		description:
-			"This blog post dives into the world of database transactions using PostgreSQL, a powerful and popular open-source relational database management system.",
+			'This blog post dives into the world of database transactions using PostgreSQL, a powerful and popular open-source relational database management system.',
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/understanding-database-transactions-postgres-twilio",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/understanding-database-transactions-postgres-twilio',
+		technologies: 'Twilio',
 	},
 	{
-		title: "Running Twilio Serverless Functions Using Database Events",
-		date: "Jun 06, 2024",
+		title: 'Running Twilio Serverless Functions Using Database Events',
+		date: 'Jun 06, 2024',
 		description:
-			"In this article, we will explore how to leverage event-driven architecture to trigger Twilio Functions based on data change in a MongoDB database.",
+			'In this article, we will explore how to leverage event-driven architecture to trigger Twilio Functions based on data change in a MongoDB database.',
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/running-twilio-serverless-functions-database-events",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/running-twilio-serverless-functions-database-events',
+		technologies: 'Twilio',
 	},
 	{
 		title:
-			"Authenticating Users with the Twilio Authy App and Verify in Next.js",
-		date: "Apr 08, 2024",
+			'Authenticating Users with the Twilio Authy App and Verify in Next.js',
+		date: 'Apr 08, 2024',
 		description:
-			"In this tutorial, you will learn how to implement Two Factor Authentication (2FA) in a Next.js application using the Twilio Authy app and the Verify API.",
+			'In this tutorial, you will learn how to implement Two Factor Authentication (2FA) in a Next.js application using the Twilio Authy app and the Verify API.',
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/authenticating-users-twilio-authy-app-verify-nextjs",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/authenticating-users-twilio-authy-app-verify-nextjs',
+		technologies: 'Twilio',
 	},
 	{
 		title:
-			"Build an Incident Alert Bot with Twilio WhatsApp, Winston and Node.js",
-		date: "Nov 02, 2023",
+			'Build an Incident Alert Bot with Twilio WhatsApp, Winston and Node.js',
+		date: 'Nov 02, 2023',
 		description:
 			"Through this tutorial, you will learn how to integrate Twilio's WhatsApp API and Winston to a Node.js API, making incident/error reporting and troubleshooting as easy as possible.",
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/incident-alert-bot-twilio-whatsapp-winston-node-js",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/incident-alert-bot-twilio-whatsapp-winston-node-js',
+		technologies: 'Twilio',
 	},
 	{
-		title: "Build a Translation Bot using Twilio WhatsApp and AWS Translate",
-		date: "Sep 19, 2023",
+		title: 'Build a Translation Bot using Twilio WhatsApp and AWS Translate',
+		date: 'Sep 19, 2023',
 		description:
 			"Through this tutorial, you will learn how to integrate Twilio's WhatsApp API and AWS Translate, unlocking a realm of endless possibilities for seamless communication.",
 		blogUrl:
-			"https://www.twilio.com/en-us/blog/build-translation-bot-twilio-whatsapp-aws-translate",
-		technologies: "Twilio",
+			'https://www.twilio.com/en-us/blog/build-translation-bot-twilio-whatsapp-aws-translate',
+		technologies: 'Twilio',
 	},
 ]);
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin' as *;
 
 @include fadeIn;
 
@@ -236,16 +229,17 @@ const blogs = ref([
 	margin: 160px $body-margin 0;
 	animation: fadeIn 1s ease-out forwards;
 
-	@include mobile {
-		margin: 100px $body-margin-mobile 0;
+	@include macbookpro {
+		margin: 160px $body-margin-macpro 0;
 	}
-
+	@include macbook {
+		margin: 160px $body-margin-mac 0;
+	}
 	@include tablet {
 		margin: 150px $body-margin-tab 0;
 	}
-
-	@include macbook {
-		margin: 160px $body-margin-mac 0;
+	@include mobile {
+		margin: 100px $body-margin-mobile 0;
 	}
 
 	.banner-sec {

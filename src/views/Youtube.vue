@@ -28,8 +28,7 @@
 							<img
 								v-if="isDarkMode"
 								src="../assets/icons/uil-thumbs-up.png"
-								alt=""
-							/>
+								alt="" />
 							<img v-else src="../assets/icons/uil-thumbs-up-1.png" alt="" />
 							<p class="technology">{{ blog.likes }}</p>
 						</div>
@@ -42,10 +41,10 @@
 </template>
 
 <script setup>
-import Navbar from "../components/navbar.vue";
-import Footer from "../components/footer.vue";
-import Blogcard from "../components/blogscard.vue";
-import { useTheme } from "../composables/useTheme";
+import Navbar from '../components/navbar.vue';
+import Footer from '../components/footer.vue';
+import Blogcard from '../components/blogscard.vue';
+import { useTheme } from '../composables/useTheme';
 
 const props = defineProps({
 	project: Object,
@@ -53,33 +52,33 @@ const props = defineProps({
 
 const { isDarkMode } = useTheme();
 
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const blogs = ref([
 	{
-		title: "Building with Cloudflare Workers",
-		date: "May 15, 2023",
+		title: 'Building with Cloudflare Workers',
+		date: 'May 15, 2023',
 		description:
-			"This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication",
-		blogUrl: "#",
+			'This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication',
+		blogUrl: '#',
 		views: 10.5,
 		likes: 200,
 	},
 	{
-		title: "Understanding Web Performance",
-		date: "June 2, 2023",
+		title: 'Understanding Web Performance',
+		date: 'June 2, 2023',
 		description:
-			"This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication",
-		blogUrl: "#",
+			'This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication',
+		blogUrl: '#',
 		views: 1000,
 		likes: 200,
 	},
 	{
-		title: "The Future of Edge Computing",
-		date: "July 10, 2023",
+		title: 'The Future of Edge Computing',
+		date: 'July 10, 2023',
 		description:
-			"This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication",
-		blogUrl: "#",
+			'This guide shows how to configure an Arch Linux machine for SSH access from a Mac using key-based authentication',
+		blogUrl: '#',
 		views: 1000,
 		likes: 200,
 	},
@@ -87,8 +86,8 @@ const blogs = ref([
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables.scss" as *;
-@use "../styles/mixin" as *;
+@use '../styles/variables.scss' as *;
+@use '../styles/mixin' as *;
 
 @include fadeIn;
 
@@ -100,9 +99,6 @@ const blogs = ref([
 	top: 0;
 	left: 0;
 	z-index: 1;
-	// // filter: blur(10px);
-	// backdrop-filter: blur(10px);
-	// -webkit-backdrop-filter: blur(10px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -111,7 +107,10 @@ const blogs = ref([
 		img {
 			z-index: 2;
 
-			@include mobile{
+			@include mobile {
+				width: 100%;
+			}
+			@include tablet {
 				width: 100%;
 			}
 		}

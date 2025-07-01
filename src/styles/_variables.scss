@@ -1,32 +1,32 @@
 /* ---------------------------------- FONTS --------------------------------- */
 
 @font-face {
-	font-family: "Font1";
-	src: url("../assets/fonts/FiraCode-Regular.ttf") format("truetype");
+	font-family: 'Font1';
+	src: url('../assets/fonts/FiraCode-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: "Font2";
-	src: url("../assets/fonts/FiraCode-Medium.ttf") format("truetype");
+	font-family: 'Font2';
+	src: url('../assets/fonts/FiraCode-Medium.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: "Font3";
-	src: url("../assets/fonts/FiraCode-SemiBold.ttf") format("truetype");
+	font-family: 'Font3';
+	src: url('../assets/fonts/FiraCode-SemiBold.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: "Font4";
-	src: url("../assets/fonts/FiraCode-Bold.ttf") format("truetype");
+	font-family: 'Font4';
+	src: url('../assets/fonts/FiraCode-Bold.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: "Font5";
-	src: url("../assets/fonts/FiraCode-Light.ttf") format("truetype");
+	font-family: 'Font5';
+	src: url('../assets/fonts/FiraCode-Light.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -36,6 +36,7 @@ $body-margin: 400px;
 $body-margin-mobile: 16px;
 $body-margin-tab: 25px;
 $body-margin-mac: 150px;
+$body-margin-macpro: 300px;
 $body-margin-up: 96px;
 $body-margin-up-mobile: 50px;
 
@@ -51,5 +52,5 @@ $heading: 32px;
 $subheading: 26px;
 $subheading-1: 22px;
 $bodytxt: 18px;
-$bodytxt-2: 16px; 
-$bodytxt-3: 14px; 
+$bodytxt-2: 16px;
+$bodytxt-3: 14px;
