@@ -7,7 +7,7 @@
 				<p>Here's a list of my speaking engagements i have done so far</p>
 			</div>
 			<div class="img-con">
-				<img src="../assets/images/City JS 16-tKABhX1v.jpg" alt="" />
+				<img src="/images/City JS 16-tKABhX1v.jpg" alt="" />
 			</div>
 		</section>
 

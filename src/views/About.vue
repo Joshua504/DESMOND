@@ -17,7 +17,7 @@
 				</p>
 
 				<div class="img-con">
-					<img src="../assets/images/avatar-CoGdC8ty.jpg" alt="" />
+					<img src="/images/avatar-CoGdC8ty.jpg" alt="" />
 				</div>
 			</div>
 		</section>
