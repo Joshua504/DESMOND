@@ -2,7 +2,7 @@
 	<Navbar />
 	<div class="cover">
 		<section>
-			<img src="/src/assets/images/coming-soon.gif" alt="" />
+			<img src="/images/coming-soon.gif" alt="" />
 		</section>
 	</div>
 	<section class="youtube" :class="{ 'light-mode': !isDarkMode }">
