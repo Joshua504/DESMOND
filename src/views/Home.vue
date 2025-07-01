@@ -135,7 +135,7 @@ const projects = ref([
 		description:
 			"AI tool that summarizes text from documents using VertexAI and/or Langchain's Open AI implementation. ",
 		technologies: 'JavaScript CSS',
-		imageUrl: '../src/assets/images/Cover(1).jpg',
+		imageUrl: '/images/Cover(1).jpg',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/ai-summarizer',
 	},
@@ -144,7 +144,7 @@ const projects = ref([
 		description:
 			'An AI tool that you can use to get currency pair update via Whatsapp. Built with Twilio and Cloudflare Workers AI. ',
 		technologies: 'JavaScript',
-		imageUrl: '../src/assets/images/currency.png',
+		imageUrl: '/images/currency.png',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/tyche-nomisma',
 	},
@@ -153,7 +153,7 @@ const projects = ref([
 		description:
 			'A CLI tool to check open ports in a given IP address built with Rust. ',
 		technologies: 'Rust',
-		imageUrl: '../src/assets/images/Ip.png',
+		imageUrl: '/images/Ip.png',
 		projectUrl: '#',
 		githubUrl: 'https://github.com/DesmondSanctity/ip_sniffer',
 	},

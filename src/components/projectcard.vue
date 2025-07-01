@@ -39,8 +39,6 @@ const props = defineProps({
 	},
 });
 
-console.log(props.project.imageUrl)
-
 const { isDarkMode } = useTheme();
 </script>
 
